@@ -36,11 +36,14 @@ contract CoShoe{
         require(shoesSold<100 ,"No Shoes avaliable for purchase");
         require(msg.value == price,"Ether sent is not equal to shoe price");
 
-        // Choosing which shoe to "buy." Logic only holds true on the assumption that there will onle be 100 CoShoes and 
+        // Choosing which shoe to "buy." Logic only holds true on the assumption 
+        //that there will onle be 100 CoShoes and 
         // the transferring of shoes between buyers is ingored in this scenario
 
         uint shoeId = 100 - 1 - shoesSold;
         Shoe storage shoe = shoes[shoeId];
+
+        // set new paramaters for shoe
         shoe.owner = msg.sender;
         shoe.name = _name;
         shoe.image = _image;
