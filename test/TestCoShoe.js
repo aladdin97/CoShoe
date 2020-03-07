@@ -17,19 +17,13 @@ contract('CoShoe', function (accounts) {
     it('should mint 100 CoShoe tokens on deployment', async function () {
         // minter is a public variable in the contract so you can get it directly via the created call function
         let no_shoes = await CoShoeInstance.countShoes()
-        // see if you can do this without countShoes() function (you should be able to access variables without using functions)
-
-
-        assert.equal(no_shoes, 100, "100 tokens were not correctly minted on deployment")
-
-        
+        assert.equal(no_shoes, 100, "100 tokens were not correctly minted on deployment")  
       })
 
 
     it('should be able to transfer ownership and correctly set the name, image, sold and updates shoesSold', async function () {
-        // minter is a public variable in the contract so you can get it directly via the created call function
         await CoShoeInstance.buyShoe("Mike","www.mikesKicks.com", {"from": accounts[0],"value":0.5e18})
-        // see if you can do this without countShoes() function (you should be able to access variables without using functions)
+    
         let bought_shoe = await CoShoeInstance.shoes(99)
         let no_shoes_bought = await CoShoeInstance.countShoesSold()
 
@@ -42,7 +36,7 @@ contract('CoShoe', function (accounts) {
       })
 
       it('should revert if caller of buyShoe does not send eth equal to price', async function () {
-        // minter is a public variable in the contract so you can get it directly via the created call function
+  
         await truffleAssert.reverts(CoShoeInstance.buyShoe("Mike","www.mikesKicks.com", {"from": accounts[0],"value":0.6e18}))
       })
 
@@ -52,7 +46,7 @@ contract('CoShoe', function (accounts) {
         await CoShoeInstance.buyShoe("Mike","www.mikesKicks.com", {"from": accounts[0],"value":0.5e18})
         let purchases = await CoShoeInstance.checkPurchases()
 
-        // count number of trues in purchases array
+        // count number of trues in purchases array and store in no_trues variable 
         let no_trues = purchases.filter(x => x==true).length
 
         assert(no_trues,1,"Incorrect number of purchases in array returned by checkPurchases")
