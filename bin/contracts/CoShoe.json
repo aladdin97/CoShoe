@@ -1,0 +1,2265 @@
+{
+    "contractName": "CoShoe",
+    "abi": [
+        {
+            "inputs": [],
+            "stateMutability": "nonpayable",
+            "type": "constructor"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "string",
+                    "name": "_name",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "_image",
+                    "type": "string"
+                }
+            ],
+            "name": "buyShoe",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "checkPurchases",
+            "outputs": [
+                {
+                    "internalType": "bool[100]",
+                    "name": "",
+                    "type": "bool[100]"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "countShoes",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "shoes",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "image",
+                    "type": "string"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "sold",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        }
+    ],
+    "metadata": "{\"compiler\":{\"version\":\"0.6.1+commit.e6f7d5a4\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_image\",\"type\":\"string\"}],\"name\":\"buyShoe\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"checkPurchases\",\"outputs\":[{\"internalType\":\"bool[100]\",\"name\":\"\",\"type\":\"bool[100]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"countShoes\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"shoes\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"image\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"sold\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/mikea/BlockchainDev/FTC_Tuts/CoShoe/contracts/CoShoe.sol\":\"CoShoe\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/mikea/BlockchainDev/FTC_Tuts/CoShoe/contracts/CoShoe.sol\":{\"keccak256\":\"0x120ca550b4706d9550626d3e12af638ac2fd7d7ba2d474e875e51b254b445dbf\",\"urls\":[\"bzz-raw://cd1ab92d0daab9e862ca25809617a9a65405e31f6558eff859db6b1c07fac2e7\",\"dweb:/ipfs/Qme5ze2A9fGLbgShLuMZWoEFLX2TrXFTGqF9YSTsNXyeCx\"]}},\"version\":1}",
+    "bytecode": "60806040526706f05b59d3b20000600055600060015534801561002157600080fd5b5060005b606481101561013f57610036610145565b5060408051608081018252338152815160208082018452600080835281840192835284518083018652818152948401949094526060830184905260028054600181018255945282517f405787fa12a823e0f2b7631cc41b3ba8828b3321ca811111fa75cd3aa3bb5ace600490950294850180546001600160a01b0319166001600160a01b0390921691909117815591518051939485946100fe937f405787fa12a823e0f2b7631cc41b3ba8828b3321ca811111fa75cd3aa3bb5acf9092019290910190610178565b506040820151805161011a916002840191602090910190610178565b50606091909101516003909101805460ff191691151591909117905550600101610025565b50610213565b604051806080016040528060006001600160a01b0316815260200160608152602001606081526020016000151581525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106101b957805160ff19168380011785556101e6565b828001600101855582156101e6579182015b828111156101e65782518255916020019190600101906101cb565b506101f29291506101f6565b5090565b61021091905b808211156101f257600081556001016101fc565b90565b610707806102226000396000f3fe60806040526004361061003f5760003560e01c80632c01f3b014610044578063540a2f4f1461006b578063558a2b8b1461019a578063607473cf146101e8575b600080fd5b34801561005057600080fd5b50610059610314565b60408051918252519081900360200190f35b6101986004803603604081101561008157600080fd5b81019060208101813564010000000081111561009c57600080fd5b8201836020820111156100ae57600080fd5b803590602001918460018302840111640100000000831117156100d057600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250929594936020810193503591505064010000000081111561012357600080fd5b82018360208201111561013557600080fd5b8035906020019184600183028401116401000000008311171561015757600080fd5b91908080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525092955061031b945050505050565b005b3480156101a657600080fd5b506101af610432565b6040518082610c8080838360005b838110156101d55781810151838201526020016101bd565b5050505090500191505060405180910390f35b3480156101f457600080fd5b506102126004803603602081101561020b57600080fd5b5035610496565b60405180856001600160a01b03166001600160a01b03168152602001806020018060200184151515158152602001838103835286818151815260200191508051906020019080838360005b8381101561027557818101518382015260200161025d565b50505050905090810190601f1680156102a25780820380516001836020036101000a031916815260200191505b50838103825285518152855160209182019187019080838360005b838110156102d55781810151838201526020016102bd565b50505050905090810190601f1680156103025780820380516001836020036101000a031916815260200191505b50965050505050505060405180910390f35b6002545b90565b60025461036f576040805162461bcd60e51b815260206004820152601f60248201527f4e6f2053686f6573206176616c6961626c6520666f7220707572636861736500604482015290519081900360640190fd5b60005434146103af5760405162461bcd60e51b81526004018080602001828103825260258152602001806106ad6025913960400191505060405180910390fd5b600154600280546000928103600019019081106103c857fe5b600091825260209182902060049091020180546001600160a01b031916331781558451909250610400916001840191908601906105f5565b50815161041690600283019060208501906105f5565b50600301805460ff191660019081179091558054810190555050565b61043a610673565b610442610673565b60005b6064811015610490576002818154811061045b57fe5b600091825260209091206003600490920201015460ff1682826064811061047e57fe5b91151560209092020152600101610445565b50905090565b600281815481106104a357fe5b600091825260209182902060049091020180546001808301805460408051601f60026000199685161561010002969096019093169490940491820187900487028401870190528083526001600160a01b0390931695509293909291908301828280156105505780601f1061052557610100808354040283529160200191610550565b820191906000526020600020905b81548152906001019060200180831161053357829003601f168201915b50505060028085018054604080516020601f60001961010060018716150201909416959095049283018590048502810185019091528181529596959450909250908301828280156105e25780601f106105b7576101008083540402835291602001916105e2565b820191906000526020600020905b8154815290600101906020018083116105c557829003601f168201915b5050506003909301549192505060ff1684565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061063657805160ff1916838001178555610663565b82800160010185558215610663579182015b82811115610663578251825591602001919060010190610648565b5061066f929150610692565b5090565b60405180610c8001604052806064906020820280388339509192915050565b61031891905b8082111561066f576000815560010161069856fe45746865722073656e74206973206e6f7420657175616c20746f2073686f65207072696365a264697066735822122067829b96950305c574849a27be844e36c3e53763b569907565e04e318bbb11fb64736f6c63430006010033",
+    "deployedBytecode": "60806040526004361061003f5760003560e01c80632c01f3b014610044578063540a2f4f1461006b578063558a2b8b1461019a578063607473cf146101e8575b600080fd5b34801561005057600080fd5b50610059610314565b60408051918252519081900360200190f35b6101986004803603604081101561008157600080fd5b81019060208101813564010000000081111561009c57600080fd5b8201836020820111156100ae57600080fd5b803590602001918460018302840111640100000000831117156100d057600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250929594936020810193503591505064010000000081111561012357600080fd5b82018360208201111561013557600080fd5b8035906020019184600183028401116401000000008311171561015757600080fd5b91908080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525092955061031b945050505050565b005b3480156101a657600080fd5b506101af610432565b6040518082610c8080838360005b838110156101d55781810151838201526020016101bd565b5050505090500191505060405180910390f35b3480156101f457600080fd5b506102126004803603602081101561020b57600080fd5b5035610496565b60405180856001600160a01b03166001600160a01b03168152602001806020018060200184151515158152602001838103835286818151815260200191508051906020019080838360005b8381101561027557818101518382015260200161025d565b50505050905090810190601f1680156102a25780820380516001836020036101000a031916815260200191505b50838103825285518152855160209182019187019080838360005b838110156102d55781810151838201526020016102bd565b50505050905090810190601f1680156103025780820380516001836020036101000a031916815260200191505b50965050505050505060405180910390f35b6002545b90565b60025461036f576040805162461bcd60e51b815260206004820152601f60248201527f4e6f2053686f6573206176616c6961626c6520666f7220707572636861736500604482015290519081900360640190fd5b60005434146103af5760405162461bcd60e51b81526004018080602001828103825260258152602001806106ad6025913960400191505060405180910390fd5b600154600280546000928103600019019081106103c857fe5b600091825260209182902060049091020180546001600160a01b031916331781558451909250610400916001840191908601906105f5565b50815161041690600283019060208501906105f5565b50600301805460ff191660019081179091558054810190555050565b61043a610673565b610442610673565b60005b6064811015610490576002818154811061045b57fe5b600091825260209091206003600490920201015460ff1682826064811061047e57fe5b91151560209092020152600101610445565b50905090565b600281815481106104a357fe5b600091825260209182902060049091020180546001808301805460408051601f60026000199685161561010002969096019093169490940491820187900487028401870190528083526001600160a01b0390931695509293909291908301828280156105505780601f1061052557610100808354040283529160200191610550565b820191906000526020600020905b81548152906001019060200180831161053357829003601f168201915b50505060028085018054604080516020601f60001961010060018716150201909416959095049283018590048502810185019091528181529596959450909250908301828280156105e25780601f106105b7576101008083540402835291602001916105e2565b820191906000526020600020905b8154815290600101906020018083116105c557829003601f168201915b5050506003909301549192505060ff1684565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061063657805160ff1916838001178555610663565b82800160010185558215610663579182015b82811115610663578251825591602001919060010190610648565b5061066f929150610692565b5090565b60405180610c8001604052806064906020820280388339509192915050565b61031891905b8082111561066f576000815560010161069856fe45746865722073656e74206973206e6f7420657175616c20746f2073686f65207072696365a264697066735822122067829b96950305c574849a27be844e36c3e53763b569907565e04e318bbb11fb64736f6c63430006010033",
+    "sourceMap": "26:1605:0:-:0;;;209:14;196:27;;246:1;229:18;;279:171;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;315:6:0;310:134;331:3;327:1;:7;310:134;;;355:16;;:::i;:::-;-1:-1:-1;374:28:0;;;;;;;;379:10;374:28;;;;;;;;;;-1:-1:-1;374:28:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;416:5;27:10:-1;;374:28:0;23:18:-1;;45:23;;416:16:0;;;;;;;;;;;;;;-1:-1:-1;;;;;;416:16:0;-1:-1:-1;;;;;416:16:0;;;;;;;;;;;;;374:28;;;;416:16;;;;;;;;;;;;:::i;:::-;-1:-1:-1;416:16:0;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;416:16:0;;;;;;;;;;;;-1:-1:-1;;416:16:0;;;;;;;;;;-1:-1:-1;;336:3:0;310:134;;;;26:1605;;;;;;;;;;;;-1:-1:-1;;;;;26:1605:0;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;26:1605:0;;;-1:-1:-1;26:1605:0;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+    "deployedSourceMap": "26:1605:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;456:84;;8:9:-1;5:2;;;30:1;27;20:12;5:2;456:84:0;;;:::i;:::-;;;;;;;;;;;;;;;;546:727;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;546:727:0;;;;;;;;21:11:-1;5:28;;2:2;;;46:1;43;36:12;2:2;546:727:0;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;546:727:0;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;546:727:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;74:27;;;;-1:-1;546:727:0;;;;;;;;-1:-1:-1;546:727:0;;-1:-1:-1;;21:11;5:28;;2:2;;;46:1;43;36:12;2:2;546:727:0;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;546:727:0;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;546:727:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;74:27;;;;-1:-1;546:727:0;;-1:-1:-1;546:727:0;;-1:-1:-1;;;;;546:727:0:i;:::-;;1323:304;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1323:304:0;;;:::i;:::-;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;1323:304:0;;;;;;;;;;;;;;;;253:19;;8:9:-1;5:2;;;30:1;27;20:12;5:2;253:19:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;253:19:0;;:::i;:::-;;;;;-1:-1:-1;;;;;253:19:0;-1:-1:-1;;;;;253:19:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;253:19:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;253:19:0;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;253:19:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;456:84;521:5;:12;456:84;;:::o;546:727::-;639:5;:12;631:59;;;;;-1:-1:-1;;;631:59:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;721:5;;708:9;:18;700:67;;;;-1:-1:-1;;;700:67:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1025:9;;1000:5;1006:12;;980:17;;1006:28;;-1:-1:-1;;1006:28:0;;1000:35;;;;;;;;;;;;;;;;;;;;1045:23;;-1:-1:-1;;;;;;1045:23:0;1058:10;1045:23;;;1078:17;;1000:35;;-1:-1:-1;1078:17:0;;1045:23;1078:9;;;:17;;;;;:::i;:::-;-1:-1:-1;1105:19:0;;;;:10;;;;:19;;;;;:::i;:::-;-1:-1:-1;1134:9:0;;:16;;-1:-1:-1;;1134:16:0;1146:4;1134:16;;;;;;1253:11;;;;;;-1:-1:-1;;546:727:0:o;1323:304::-;1370:16;;:::i;:::-;1456:32;;:::i;:::-;1503:6;1498:90;1518:3;1515:1;:6;1498:90;;;1563:5;1569:1;1563:8;;;;;;;;;;;;;;;;:13;:8;;;;;:13;;;;1542:15;1558:1;1542:18;;;;;;;:34;;;:18;;;;;:34;1523:3;;1498:90;;;-1:-1:-1;1605:15:0;-1:-1:-1;1323:304:0;:::o;253:19::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;253:19:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;253:19:0;;;;-1:-1:-1;253:19:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;253:19:0;;;;;;;;;;;-1:-1:-1;;253:19:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;253:19:0;;-1:-1:-1;253:19:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;253:19:0;;;;;;;-1:-1:-1;;253:19:0;;;:::o;26:1605::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;26:1605:0;;;-1:-1:-1;26:1605:0;:::i;:::-;;;:::o;:::-;;;;;;;;;;;29:2:-1;21:6;17:15;117:4;105:10;97:6;88:34;-1:-1;26:1605:0;;;-1:-1:-1;;26:1605:0:o;:::-;;;;;;;;;;;;;;;;;",
+    "sourcePath": "/home/mikea/BlockchainDev/FTC_Tuts/CoShoe/contracts/CoShoe.sol",
+    "compiler": {
+        "name": "solc",
+        "version": "0.6.1+commit.e6f7d5a4"
+    },
+    "ast": {
+        "absolutePath": "/home/mikea/BlockchainDev/FTC_Tuts/CoShoe/contracts/CoShoe.sol",
+        "exportedSymbols": {
+            "CoShoe": [
+                166
+            ]
+        },
+        "id": 167,
+        "nodeType": "SourceUnit",
+        "nodes": [
+            {
+                "id": 1,
+                "literals": [
+                    "solidity",
+                    ">=",
+                    "0.5",
+                    ".0"
+                ],
+                "nodeType": "PragmaDirective",
+                "src": "0:24:0"
+            },
+            {
+                "abstract": false,
+                "baseContracts": [],
+                "contractDependencies": [],
+                "contractKind": "contract",
+                "documentation": null,
+                "fullyImplemented": true,
+                "id": 166,
+                "linearizedBaseContracts": [
+                    166
+                ],
+                "name": "CoShoe",
+                "nodeType": "ContractDefinition",
+                "nodes": [
+                    {
+                        "canonicalName": "CoShoe.Shoe",
+                        "id": 10,
+                        "members": [
+                            {
+                                "constant": false,
+                                "id": 3,
+                                "name": "owner",
+                                "nodeType": "VariableDeclaration",
+                                "overrides": null,
+                                "scope": 10,
+                                "src": "70:13:0",
+                                "stateVariable": false,
+                                "storageLocation": "default",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_address",
+                                    "typeString": "address"
+                                },
+                                "typeName": {
+                                    "id": 2,
+                                    "name": "address",
+                                    "nodeType": "ElementaryTypeName",
+                                    "src": "70:7:0",
+                                    "stateMutability": "nonpayable",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_address",
+                                        "typeString": "address"
+                                    }
+                                },
+                                "value": null,
+                                "visibility": "internal"
+                            },
+                            {
+                                "constant": false,
+                                "id": 5,
+                                "name": "name",
+                                "nodeType": "VariableDeclaration",
+                                "overrides": null,
+                                "scope": 10,
+                                "src": "93:11:0",
+                                "stateVariable": false,
+                                "storageLocation": "default",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_string_storage_ptr",
+                                    "typeString": "string"
+                                },
+                                "typeName": {
+                                    "id": 4,
+                                    "name": "string",
+                                    "nodeType": "ElementaryTypeName",
+                                    "src": "93:6:0",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_string_storage_ptr",
+                                        "typeString": "string"
+                                    }
+                                },
+                                "value": null,
+                                "visibility": "internal"
+                            },
+                            {
+                                "constant": false,
+                                "id": 7,
+                                "name": "image",
+                                "nodeType": "VariableDeclaration",
+                                "overrides": null,
+                                "scope": 10,
+                                "src": "114:12:0",
+                                "stateVariable": false,
+                                "storageLocation": "default",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_string_storage_ptr",
+                                    "typeString": "string"
+                                },
+                                "typeName": {
+                                    "id": 6,
+                                    "name": "string",
+                                    "nodeType": "ElementaryTypeName",
+                                    "src": "114:6:0",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_string_storage_ptr",
+                                        "typeString": "string"
+                                    }
+                                },
+                                "value": null,
+                                "visibility": "internal"
+                            },
+                            {
+                                "constant": false,
+                                "id": 9,
+                                "name": "sold",
+                                "nodeType": "VariableDeclaration",
+                                "overrides": null,
+                                "scope": 10,
+                                "src": "136:9:0",
+                                "stateVariable": false,
+                                "storageLocation": "default",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_bool",
+                                    "typeString": "bool"
+                                },
+                                "typeName": {
+                                    "id": 8,
+                                    "name": "bool",
+                                    "nodeType": "ElementaryTypeName",
+                                    "src": "136:4:0",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_bool",
+                                        "typeString": "bool"
+                                    }
+                                },
+                                "value": null,
+                                "visibility": "internal"
+                            }
+                        ],
+                        "name": "Shoe",
+                        "nodeType": "StructDefinition",
+                        "scope": 166,
+                        "src": "48:104:0",
+                        "visibility": "public"
+                    },
+                    {
+                        "constant": false,
+                        "id": 17,
+                        "name": "price",
+                        "nodeType": "VariableDeclaration",
+                        "overrides": null,
+                        "scope": 166,
+                        "src": "196:27:0",
+                        "stateVariable": true,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                        },
+                        "typeName": {
+                            "id": 11,
+                            "name": "uint",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "196:4:0",
+                            "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                            }
+                        },
+                        "value": {
+                            "argumentTypes": null,
+                            "commonType": {
+                                "typeIdentifier": "t_rational_500000000000000000_by_1",
+                                "typeString": "int_const 500000000000000000"
+                            },
+                            "id": 16,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "leftExpression": {
+                                "argumentTypes": null,
+                                "hexValue": "302e35",
+                                "id": 12,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "kind": "number",
+                                "lValueRequested": false,
+                                "nodeType": "Literal",
+                                "src": "209:3:0",
+                                "subdenomination": null,
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_rational_1_by_2",
+                                    "typeString": "rational_const 1 / 2"
+                                },
+                                "value": "0.5"
+                            },
+                            "nodeType": "BinaryOperation",
+                            "operator": "*",
+                            "rightExpression": {
+                                "argumentTypes": null,
+                                "commonType": {
+                                    "typeIdentifier": "t_rational_1000000000000000000_by_1",
+                                    "typeString": "int_const 1000000000000000000"
+                                },
+                                "id": 15,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "lValueRequested": false,
+                                "leftExpression": {
+                                    "argumentTypes": null,
+                                    "hexValue": "3130",
+                                    "id": 13,
+                                    "isConstant": false,
+                                    "isLValue": false,
+                                    "isPure": true,
+                                    "kind": "number",
+                                    "lValueRequested": false,
+                                    "nodeType": "Literal",
+                                    "src": "213:2:0",
+                                    "subdenomination": null,
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_rational_10_by_1",
+                                        "typeString": "int_const 10"
+                                    },
+                                    "value": "10"
+                                },
+                                "nodeType": "BinaryOperation",
+                                "operator": "**",
+                                "rightExpression": {
+                                    "argumentTypes": null,
+                                    "hexValue": "3138",
+                                    "id": 14,
+                                    "isConstant": false,
+                                    "isLValue": false,
+                                    "isPure": true,
+                                    "kind": "number",
+                                    "lValueRequested": false,
+                                    "nodeType": "Literal",
+                                    "src": "217:6:0",
+                                    "subdenomination": "wei",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_rational_18_by_1",
+                                        "typeString": "int_const 18"
+                                    },
+                                    "value": "18"
+                                },
+                                "src": "213:10:0",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_rational_1000000000000000000_by_1",
+                                    "typeString": "int_const 1000000000000000000"
+                                }
+                            },
+                            "src": "209:14:0",
+                            "typeDescriptions": {
+                                "typeIdentifier": "t_rational_500000000000000000_by_1",
+                                "typeString": "int_const 500000000000000000"
+                            }
+                        },
+                        "visibility": "internal"
+                    },
+                    {
+                        "constant": false,
+                        "id": 20,
+                        "name": "shoesSold",
+                        "nodeType": "VariableDeclaration",
+                        "overrides": null,
+                        "scope": 166,
+                        "src": "229:18:0",
+                        "stateVariable": true,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                        },
+                        "typeName": {
+                            "id": 18,
+                            "name": "uint",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "229:4:0",
+                            "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                            }
+                        },
+                        "value": {
+                            "argumentTypes": null,
+                            "hexValue": "30",
+                            "id": 19,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "246:1:0",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                            },
+                            "value": "0"
+                        },
+                        "visibility": "internal"
+                    },
+                    {
+                        "constant": false,
+                        "functionSelector": "607473cf",
+                        "id": 23,
+                        "name": "shoes",
+                        "nodeType": "VariableDeclaration",
+                        "overrides": null,
+                        "scope": 166,
+                        "src": "253:19:0",
+                        "stateVariable": true,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                            "typeIdentifier": "t_array$_t_struct$_Shoe_$10_storage_$dyn_storage",
+                            "typeString": "struct CoShoe.Shoe[]"
+                        },
+                        "typeName": {
+                            "baseType": {
+                                "contractScope": null,
+                                "id": 21,
+                                "name": "Shoe",
+                                "nodeType": "UserDefinedTypeName",
+                                "referencedDeclaration": 10,
+                                "src": "253:4:0",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_struct$_Shoe_$10_storage_ptr",
+                                    "typeString": "struct CoShoe.Shoe"
+                                }
+                            },
+                            "id": 22,
+                            "length": null,
+                            "nodeType": "ArrayTypeName",
+                            "src": "253:6:0",
+                            "typeDescriptions": {
+                                "typeIdentifier": "t_array$_t_struct$_Shoe_$10_storage_$dyn_storage_ptr",
+                                "typeString": "struct CoShoe.Shoe[]"
+                            }
+                        },
+                        "value": null,
+                        "visibility": "public"
+                    },
+                    {
+                        "body": {
+                            "id": 54,
+                            "nodeType": "Block",
+                            "src": "300:150:0",
+                            "statements": [
+                                {
+                                    "body": {
+                                        "id": 52,
+                                        "nodeType": "Block",
+                                        "src": "341:103:0",
+                                        "statements": [
+                                            {
+                                                "assignments": [
+                                                    37
+                                                ],
+                                                "declarations": [
+                                                    {
+                                                        "constant": false,
+                                                        "id": 37,
+                                                        "name": "shoe",
+                                                        "nodeType": "VariableDeclaration",
+                                                        "overrides": null,
+                                                        "scope": 52,
+                                                        "src": "355:16:0",
+                                                        "stateVariable": false,
+                                                        "storageLocation": "memory",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_struct$_Shoe_$10_memory_ptr",
+                                                            "typeString": "struct CoShoe.Shoe"
+                                                        },
+                                                        "typeName": {
+                                                            "contractScope": null,
+                                                            "id": 36,
+                                                            "name": "Shoe",
+                                                            "nodeType": "UserDefinedTypeName",
+                                                            "referencedDeclaration": 10,
+                                                            "src": "355:4:0",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_struct$_Shoe_$10_storage_ptr",
+                                                                "typeString": "struct CoShoe.Shoe"
+                                                            }
+                                                        },
+                                                        "value": null,
+                                                        "visibility": "internal"
+                                                    }
+                                                ],
+                                                "id": 45,
+                                                "initialValue": {
+                                                    "argumentTypes": null,
+                                                    "arguments": [
+                                                        {
+                                                            "argumentTypes": null,
+                                                            "expression": {
+                                                                "argumentTypes": null,
+                                                                "id": 39,
+                                                                "name": "msg",
+                                                                "nodeType": "Identifier",
+                                                                "overloadedDeclarations": [],
+                                                                "referencedDeclaration": 181,
+                                                                "src": "379:3:0",
+                                                                "typeDescriptions": {
+                                                                    "typeIdentifier": "t_magic_message",
+                                                                    "typeString": "msg"
+                                                                }
+                                                            },
+                                                            "id": 40,
+                                                            "isConstant": false,
+                                                            "isLValue": false,
+                                                            "isPure": false,
+                                                            "lValueRequested": false,
+                                                            "memberName": "sender",
+                                                            "nodeType": "MemberAccess",
+                                                            "referencedDeclaration": null,
+                                                            "src": "379:10:0",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_address_payable",
+                                                                "typeString": "address payable"
+                                                            }
+                                                        },
+                                                        {
+                                                            "argumentTypes": null,
+                                                            "hexValue": "",
+                                                            "id": 41,
+                                                            "isConstant": false,
+                                                            "isLValue": false,
+                                                            "isPure": true,
+                                                            "kind": "string",
+                                                            "lValueRequested": false,
+                                                            "nodeType": "Literal",
+                                                            "src": "390:2:0",
+                                                            "subdenomination": null,
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
+                                                                "typeString": "literal_string \"\""
+                                                            },
+                                                            "value": ""
+                                                        },
+                                                        {
+                                                            "argumentTypes": null,
+                                                            "hexValue": "",
+                                                            "id": 42,
+                                                            "isConstant": false,
+                                                            "isLValue": false,
+                                                            "isPure": true,
+                                                            "kind": "string",
+                                                            "lValueRequested": false,
+                                                            "nodeType": "Literal",
+                                                            "src": "393:2:0",
+                                                            "subdenomination": null,
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
+                                                                "typeString": "literal_string \"\""
+                                                            },
+                                                            "value": ""
+                                                        },
+                                                        {
+                                                            "argumentTypes": null,
+                                                            "hexValue": "66616c7365",
+                                                            "id": 43,
+                                                            "isConstant": false,
+                                                            "isLValue": false,
+                                                            "isPure": true,
+                                                            "kind": "bool",
+                                                            "lValueRequested": false,
+                                                            "nodeType": "Literal",
+                                                            "src": "396:5:0",
+                                                            "subdenomination": null,
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_bool",
+                                                                "typeString": "bool"
+                                                            },
+                                                            "value": "false"
+                                                        }
+                                                    ],
+                                                    "expression": {
+                                                        "argumentTypes": [
+                                                            {
+                                                                "typeIdentifier": "t_address_payable",
+                                                                "typeString": "address payable"
+                                                            },
+                                                            {
+                                                                "typeIdentifier": "t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
+                                                                "typeString": "literal_string \"\""
+                                                            },
+                                                            {
+                                                                "typeIdentifier": "t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
+                                                                "typeString": "literal_string \"\""
+                                                            },
+                                                            {
+                                                                "typeIdentifier": "t_bool",
+                                                                "typeString": "bool"
+                                                            }
+                                                        ],
+                                                        "id": 38,
+                                                        "name": "Shoe",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 10,
+                                                        "src": "374:4:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_type$_t_struct$_Shoe_$10_storage_ptr_$",
+                                                            "typeString": "type(struct CoShoe.Shoe storage pointer)"
+                                                        }
+                                                    },
+                                                    "id": 44,
+                                                    "isConstant": false,
+                                                    "isLValue": false,
+                                                    "isPure": false,
+                                                    "kind": "structConstructorCall",
+                                                    "lValueRequested": false,
+                                                    "names": [],
+                                                    "nodeType": "FunctionCall",
+                                                    "src": "374:28:0",
+                                                    "tryCall": false,
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_struct$_Shoe_$10_memory",
+                                                        "typeString": "struct CoShoe.Shoe memory"
+                                                    }
+                                                },
+                                                "nodeType": "VariableDeclarationStatement",
+                                                "src": "355:47:0"
+                                            },
+                                            {
+                                                "expression": {
+                                                    "argumentTypes": null,
+                                                    "arguments": [
+                                                        {
+                                                            "argumentTypes": null,
+                                                            "id": 49,
+                                                            "name": "shoe",
+                                                            "nodeType": "Identifier",
+                                                            "overloadedDeclarations": [],
+                                                            "referencedDeclaration": 37,
+                                                            "src": "427:4:0",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_struct$_Shoe_$10_memory_ptr",
+                                                                "typeString": "struct CoShoe.Shoe memory"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "expression": {
+                                                        "argumentTypes": [
+                                                            {
+                                                                "typeIdentifier": "t_struct$_Shoe_$10_memory_ptr",
+                                                                "typeString": "struct CoShoe.Shoe memory"
+                                                            }
+                                                        ],
+                                                        "expression": {
+                                                            "argumentTypes": null,
+                                                            "id": 46,
+                                                            "name": "shoes",
+                                                            "nodeType": "Identifier",
+                                                            "overloadedDeclarations": [],
+                                                            "referencedDeclaration": 23,
+                                                            "src": "416:5:0",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_array$_t_struct$_Shoe_$10_storage_$dyn_storage",
+                                                                "typeString": "struct CoShoe.Shoe storage ref[] storage ref"
+                                                            }
+                                                        },
+                                                        "id": 48,
+                                                        "isConstant": false,
+                                                        "isLValue": false,
+                                                        "isPure": false,
+                                                        "lValueRequested": false,
+                                                        "memberName": "push",
+                                                        "nodeType": "MemberAccess",
+                                                        "referencedDeclaration": null,
+                                                        "src": "416:10:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Shoe_$10_storage_$returns$__$",
+                                                            "typeString": "function (struct CoShoe.Shoe storage ref)"
+                                                        }
+                                                    },
+                                                    "id": 50,
+                                                    "isConstant": false,
+                                                    "isLValue": false,
+                                                    "isPure": false,
+                                                    "kind": "functionCall",
+                                                    "lValueRequested": false,
+                                                    "names": [],
+                                                    "nodeType": "FunctionCall",
+                                                    "src": "416:16:0",
+                                                    "tryCall": false,
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_tuple$__$",
+                                                        "typeString": "tuple()"
+                                                    }
+                                                },
+                                                "id": 51,
+                                                "nodeType": "ExpressionStatement",
+                                                "src": "416:16:0"
+                                            }
+                                        ]
+                                    },
+                                    "condition": {
+                                        "argumentTypes": null,
+                                        "commonType": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        },
+                                        "id": 32,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftExpression": {
+                                            "argumentTypes": null,
+                                            "id": 30,
+                                            "name": "i",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 27,
+                                            "src": "327:1:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "nodeType": "BinaryOperation",
+                                        "operator": "<",
+                                        "rightExpression": {
+                                            "argumentTypes": null,
+                                            "hexValue": "313030",
+                                            "id": 31,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": true,
+                                            "kind": "number",
+                                            "lValueRequested": false,
+                                            "nodeType": "Literal",
+                                            "src": "331:3:0",
+                                            "subdenomination": null,
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_rational_100_by_1",
+                                                "typeString": "int_const 100"
+                                            },
+                                            "value": "100"
+                                        },
+                                        "src": "327:7:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_bool",
+                                            "typeString": "bool"
+                                        }
+                                    },
+                                    "id": 53,
+                                    "initializationExpression": {
+                                        "assignments": [
+                                            27
+                                        ],
+                                        "declarations": [
+                                            {
+                                                "constant": false,
+                                                "id": 27,
+                                                "name": "i",
+                                                "nodeType": "VariableDeclaration",
+                                                "overrides": null,
+                                                "scope": 53,
+                                                "src": "315:6:0",
+                                                "stateVariable": false,
+                                                "storageLocation": "default",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                },
+                                                "typeName": {
+                                                    "id": 26,
+                                                    "name": "uint",
+                                                    "nodeType": "ElementaryTypeName",
+                                                    "src": "315:4:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "value": null,
+                                                "visibility": "internal"
+                                            }
+                                        ],
+                                        "id": 29,
+                                        "initialValue": {
+                                            "argumentTypes": null,
+                                            "hexValue": "30",
+                                            "id": 28,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": true,
+                                            "kind": "number",
+                                            "lValueRequested": false,
+                                            "nodeType": "Literal",
+                                            "src": "324:1:0",
+                                            "subdenomination": null,
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_rational_0_by_1",
+                                                "typeString": "int_const 0"
+                                            },
+                                            "value": "0"
+                                        },
+                                        "nodeType": "VariableDeclarationStatement",
+                                        "src": "315:10:0"
+                                    },
+                                    "loopExpression": {
+                                        "expression": {
+                                            "argumentTypes": null,
+                                            "id": 34,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "nodeType": "UnaryOperation",
+                                            "operator": "++",
+                                            "prefix": false,
+                                            "src": "336:3:0",
+                                            "subExpression": {
+                                                "argumentTypes": null,
+                                                "id": 33,
+                                                "name": "i",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 27,
+                                                "src": "336:1:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            },
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "id": 35,
+                                        "nodeType": "ExpressionStatement",
+                                        "src": "336:3:0"
+                                    },
+                                    "nodeType": "ForStatement",
+                                    "src": "310:134:0"
+                                }
+                            ]
+                        },
+                        "documentation": null,
+                        "id": 55,
+                        "implemented": true,
+                        "kind": "constructor",
+                        "modifiers": [],
+                        "name": "",
+                        "nodeType": "FunctionDefinition",
+                        "overrides": null,
+                        "parameters": {
+                            "id": 24,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "290:2:0"
+                        },
+                        "returnParameters": {
+                            "id": 25,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "300:0:0"
+                        },
+                        "scope": 166,
+                        "src": "279:171:0",
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "public"
+                    },
+                    {
+                        "body": {
+                            "id": 63,
+                            "nodeType": "Block",
+                            "src": "504:36:0",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "argumentTypes": null,
+                                        "expression": {
+                                            "argumentTypes": null,
+                                            "id": 60,
+                                            "name": "shoes",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 23,
+                                            "src": "521:5:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_array$_t_struct$_Shoe_$10_storage_$dyn_storage",
+                                                "typeString": "struct CoShoe.Shoe storage ref[] storage ref"
+                                            }
+                                        },
+                                        "id": 61,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "memberName": "length",
+                                        "nodeType": "MemberAccess",
+                                        "referencedDeclaration": null,
+                                        "src": "521:12:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "functionReturnParameters": 59,
+                                    "id": 62,
+                                    "nodeType": "Return",
+                                    "src": "514:19:0"
+                                }
+                            ]
+                        },
+                        "documentation": null,
+                        "functionSelector": "2c01f3b0",
+                        "id": 64,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "countShoes",
+                        "nodeType": "FunctionDefinition",
+                        "overrides": null,
+                        "parameters": {
+                            "id": 56,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "475:2:0"
+                        },
+                        "returnParameters": {
+                            "id": 59,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 58,
+                                    "name": "",
+                                    "nodeType": "VariableDeclaration",
+                                    "overrides": null,
+                                    "scope": 64,
+                                    "src": "499:4:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 57,
+                                        "name": "uint",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "499:4:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "value": null,
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "498:6:0"
+                        },
+                        "scope": 166,
+                        "src": "456:84:0",
+                        "stateMutability": "view",
+                        "virtual": false,
+                        "visibility": "public"
+                    },
+                    {
+                        "body": {
+                            "id": 126,
+                            "nodeType": "Block",
+                            "src": "621:652:0",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "argumentTypes": null,
+                                        "arguments": [
+                                            {
+                                                "argumentTypes": null,
+                                                "commonType": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                },
+                                                "id": 75,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "leftExpression": {
+                                                    "argumentTypes": null,
+                                                    "expression": {
+                                                        "argumentTypes": null,
+                                                        "id": 72,
+                                                        "name": "shoes",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 23,
+                                                        "src": "639:5:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_array$_t_struct$_Shoe_$10_storage_$dyn_storage",
+                                                            "typeString": "struct CoShoe.Shoe storage ref[] storage ref"
+                                                        }
+                                                    },
+                                                    "id": 73,
+                                                    "isConstant": false,
+                                                    "isLValue": false,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "memberName": "length",
+                                                    "nodeType": "MemberAccess",
+                                                    "referencedDeclaration": null,
+                                                    "src": "639:12:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "nodeType": "BinaryOperation",
+                                                "operator": ">",
+                                                "rightExpression": {
+                                                    "argumentTypes": null,
+                                                    "hexValue": "30",
+                                                    "id": 74,
+                                                    "isConstant": false,
+                                                    "isLValue": false,
+                                                    "isPure": true,
+                                                    "kind": "number",
+                                                    "lValueRequested": false,
+                                                    "nodeType": "Literal",
+                                                    "src": "653:1:0",
+                                                    "subdenomination": null,
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_rational_0_by_1",
+                                                        "typeString": "int_const 0"
+                                                    },
+                                                    "value": "0"
+                                                },
+                                                "src": "639:15:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                }
+                                            },
+                                            {
+                                                "argumentTypes": null,
+                                                "hexValue": "4e6f2053686f6573206176616c6961626c6520666f72207075726368617365",
+                                                "id": 76,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": true,
+                                                "kind": "string",
+                                                "lValueRequested": false,
+                                                "nodeType": "Literal",
+                                                "src": "656:33:0",
+                                                "subdenomination": null,
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_stringliteral_ea8291c75d4597fcc03f087e9f65be80d4607ad4cf29a9aae8128e7a9c7954bd",
+                                                    "typeString": "literal_string \"No Shoes avaliable for purchase\""
+                                                },
+                                                "value": "No Shoes avaliable for purchase"
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                },
+                                                {
+                                                    "typeIdentifier": "t_stringliteral_ea8291c75d4597fcc03f087e9f65be80d4607ad4cf29a9aae8128e7a9c7954bd",
+                                                    "typeString": "literal_string \"No Shoes avaliable for purchase\""
+                                                }
+                                            ],
+                                            "id": 71,
+                                            "name": "require",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [
+                                                184,
+                                                185
+                                            ],
+                                            "referencedDeclaration": 185,
+                                            "src": "631:7:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                                                "typeString": "function (bool,string memory) pure"
+                                            }
+                                        },
+                                        "id": 77,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "631:59:0",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 78,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "631:59:0"
+                                },
+                                {
+                                    "expression": {
+                                        "argumentTypes": null,
+                                        "arguments": [
+                                            {
+                                                "argumentTypes": null,
+                                                "commonType": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                },
+                                                "id": 83,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "leftExpression": {
+                                                    "argumentTypes": null,
+                                                    "expression": {
+                                                        "argumentTypes": null,
+                                                        "id": 80,
+                                                        "name": "msg",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 181,
+                                                        "src": "708:3:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_magic_message",
+                                                            "typeString": "msg"
+                                                        }
+                                                    },
+                                                    "id": 81,
+                                                    "isConstant": false,
+                                                    "isLValue": false,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "memberName": "value",
+                                                    "nodeType": "MemberAccess",
+                                                    "referencedDeclaration": null,
+                                                    "src": "708:9:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "nodeType": "BinaryOperation",
+                                                "operator": "==",
+                                                "rightExpression": {
+                                                    "argumentTypes": null,
+                                                    "id": 82,
+                                                    "name": "price",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 17,
+                                                    "src": "721:5:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "src": "708:18:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                }
+                                            },
+                                            {
+                                                "argumentTypes": null,
+                                                "hexValue": "45746865722073656e74206973206e6f7420657175616c20746f2073686f65207072696365",
+                                                "id": 84,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": true,
+                                                "kind": "string",
+                                                "lValueRequested": false,
+                                                "nodeType": "Literal",
+                                                "src": "727:39:0",
+                                                "subdenomination": null,
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_stringliteral_2dac2a0e3a65829a3f0bc3b7dd3b6e9688ab7933947c3d3c95dcad7158419697",
+                                                    "typeString": "literal_string \"Ether sent is not equal to shoe price\""
+                                                },
+                                                "value": "Ether sent is not equal to shoe price"
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                },
+                                                {
+                                                    "typeIdentifier": "t_stringliteral_2dac2a0e3a65829a3f0bc3b7dd3b6e9688ab7933947c3d3c95dcad7158419697",
+                                                    "typeString": "literal_string \"Ether sent is not equal to shoe price\""
+                                                }
+                                            ],
+                                            "id": 79,
+                                            "name": "require",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [
+                                                184,
+                                                185
+                                            ],
+                                            "referencedDeclaration": 185,
+                                            "src": "700:7:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                                                "typeString": "function (bool,string memory) pure"
+                                            }
+                                        },
+                                        "id": 85,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "700:67:0",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 86,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "700:67:0"
+                                },
+                                {
+                                    "assignments": [
+                                        88
+                                    ],
+                                    "declarations": [
+                                        {
+                                            "constant": false,
+                                            "id": 88,
+                                            "name": "shoe",
+                                            "nodeType": "VariableDeclaration",
+                                            "overrides": null,
+                                            "scope": 126,
+                                            "src": "980:17:0",
+                                            "stateVariable": false,
+                                            "storageLocation": "storage",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_struct$_Shoe_$10_storage_ptr",
+                                                "typeString": "struct CoShoe.Shoe"
+                                            },
+                                            "typeName": {
+                                                "contractScope": null,
+                                                "id": 87,
+                                                "name": "Shoe",
+                                                "nodeType": "UserDefinedTypeName",
+                                                "referencedDeclaration": 10,
+                                                "src": "980:4:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_Shoe_$10_storage_ptr",
+                                                    "typeString": "struct CoShoe.Shoe"
+                                                }
+                                            },
+                                            "value": null,
+                                            "visibility": "internal"
+                                        }
+                                    ],
+                                    "id": 97,
+                                    "initialValue": {
+                                        "argumentTypes": null,
+                                        "baseExpression": {
+                                            "argumentTypes": null,
+                                            "id": 89,
+                                            "name": "shoes",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 23,
+                                            "src": "1000:5:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_array$_t_struct$_Shoe_$10_storage_$dyn_storage",
+                                                "typeString": "struct CoShoe.Shoe storage ref[] storage ref"
+                                            }
+                                        },
+                                        "id": 96,
+                                        "indexExpression": {
+                                            "argumentTypes": null,
+                                            "commonType": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            },
+                                            "id": 95,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "leftExpression": {
+                                                "argumentTypes": null,
+                                                "commonType": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                },
+                                                "id": 93,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "leftExpression": {
+                                                    "argumentTypes": null,
+                                                    "expression": {
+                                                        "argumentTypes": null,
+                                                        "id": 90,
+                                                        "name": "shoes",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 23,
+                                                        "src": "1006:5:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_array$_t_struct$_Shoe_$10_storage_$dyn_storage",
+                                                            "typeString": "struct CoShoe.Shoe storage ref[] storage ref"
+                                                        }
+                                                    },
+                                                    "id": 91,
+                                                    "isConstant": false,
+                                                    "isLValue": false,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "memberName": "length",
+                                                    "nodeType": "MemberAccess",
+                                                    "referencedDeclaration": null,
+                                                    "src": "1006:12:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "nodeType": "BinaryOperation",
+                                                "operator": "-",
+                                                "rightExpression": {
+                                                    "argumentTypes": null,
+                                                    "hexValue": "31",
+                                                    "id": 92,
+                                                    "isConstant": false,
+                                                    "isLValue": false,
+                                                    "isPure": true,
+                                                    "kind": "number",
+                                                    "lValueRequested": false,
+                                                    "nodeType": "Literal",
+                                                    "src": "1021:1:0",
+                                                    "subdenomination": null,
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_rational_1_by_1",
+                                                        "typeString": "int_const 1"
+                                                    },
+                                                    "value": "1"
+                                                },
+                                                "src": "1006:16:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            },
+                                            "nodeType": "BinaryOperation",
+                                            "operator": "-",
+                                            "rightExpression": {
+                                                "argumentTypes": null,
+                                                "id": 94,
+                                                "name": "shoesSold",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 20,
+                                                "src": "1025:9:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            },
+                                            "src": "1006:28:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "isConstant": false,
+                                        "isLValue": true,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "nodeType": "IndexAccess",
+                                        "src": "1000:35:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_struct$_Shoe_$10_storage",
+                                            "typeString": "struct CoShoe.Shoe storage ref"
+                                        }
+                                    },
+                                    "nodeType": "VariableDeclarationStatement",
+                                    "src": "980:55:0"
+                                },
+                                {
+                                    "expression": {
+                                        "argumentTypes": null,
+                                        "id": 103,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftHandSide": {
+                                            "argumentTypes": null,
+                                            "expression": {
+                                                "argumentTypes": null,
+                                                "id": 98,
+                                                "name": "shoe",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 88,
+                                                "src": "1045:4:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_Shoe_$10_storage_ptr",
+                                                    "typeString": "struct CoShoe.Shoe storage pointer"
+                                                }
+                                            },
+                                            "id": 100,
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": true,
+                                            "memberName": "owner",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 3,
+                                            "src": "1045:10:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_address",
+                                                "typeString": "address"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "=",
+                                        "rightHandSide": {
+                                            "argumentTypes": null,
+                                            "expression": {
+                                                "argumentTypes": null,
+                                                "id": 101,
+                                                "name": "msg",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 181,
+                                                "src": "1058:3:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_magic_message",
+                                                    "typeString": "msg"
+                                                }
+                                            },
+                                            "id": 102,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "memberName": "sender",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": null,
+                                            "src": "1058:10:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_address_payable",
+                                                "typeString": "address payable"
+                                            }
+                                        },
+                                        "src": "1045:23:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_address",
+                                            "typeString": "address"
+                                        }
+                                    },
+                                    "id": 104,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "1045:23:0"
+                                },
+                                {
+                                    "expression": {
+                                        "argumentTypes": null,
+                                        "id": 109,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftHandSide": {
+                                            "argumentTypes": null,
+                                            "expression": {
+                                                "argumentTypes": null,
+                                                "id": 105,
+                                                "name": "shoe",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 88,
+                                                "src": "1078:4:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_Shoe_$10_storage_ptr",
+                                                    "typeString": "struct CoShoe.Shoe storage pointer"
+                                                }
+                                            },
+                                            "id": 107,
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": true,
+                                            "memberName": "name",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 5,
+                                            "src": "1078:9:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_string_storage",
+                                                "typeString": "string storage ref"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "=",
+                                        "rightHandSide": {
+                                            "argumentTypes": null,
+                                            "id": 108,
+                                            "name": "_name",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 66,
+                                            "src": "1090:5:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_string_memory_ptr",
+                                                "typeString": "string memory"
+                                            }
+                                        },
+                                        "src": "1078:17:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_string_storage",
+                                            "typeString": "string storage ref"
+                                        }
+                                    },
+                                    "id": 110,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "1078:17:0"
+                                },
+                                {
+                                    "expression": {
+                                        "argumentTypes": null,
+                                        "id": 115,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftHandSide": {
+                                            "argumentTypes": null,
+                                            "expression": {
+                                                "argumentTypes": null,
+                                                "id": 111,
+                                                "name": "shoe",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 88,
+                                                "src": "1105:4:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_Shoe_$10_storage_ptr",
+                                                    "typeString": "struct CoShoe.Shoe storage pointer"
+                                                }
+                                            },
+                                            "id": 113,
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": true,
+                                            "memberName": "image",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 7,
+                                            "src": "1105:10:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_string_storage",
+                                                "typeString": "string storage ref"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "=",
+                                        "rightHandSide": {
+                                            "argumentTypes": null,
+                                            "id": 114,
+                                            "name": "_image",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 68,
+                                            "src": "1118:6:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_string_memory_ptr",
+                                                "typeString": "string memory"
+                                            }
+                                        },
+                                        "src": "1105:19:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_string_storage",
+                                            "typeString": "string storage ref"
+                                        }
+                                    },
+                                    "id": 116,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "1105:19:0"
+                                },
+                                {
+                                    "expression": {
+                                        "argumentTypes": null,
+                                        "id": 121,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftHandSide": {
+                                            "argumentTypes": null,
+                                            "expression": {
+                                                "argumentTypes": null,
+                                                "id": 117,
+                                                "name": "shoe",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 88,
+                                                "src": "1134:4:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_Shoe_$10_storage_ptr",
+                                                    "typeString": "struct CoShoe.Shoe storage pointer"
+                                                }
+                                            },
+                                            "id": 119,
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": true,
+                                            "memberName": "sold",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 9,
+                                            "src": "1134:9:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_bool",
+                                                "typeString": "bool"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "=",
+                                        "rightHandSide": {
+                                            "argumentTypes": null,
+                                            "hexValue": "74727565",
+                                            "id": 120,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": true,
+                                            "kind": "bool",
+                                            "lValueRequested": false,
+                                            "nodeType": "Literal",
+                                            "src": "1146:4:0",
+                                            "subdenomination": null,
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_bool",
+                                                "typeString": "bool"
+                                            },
+                                            "value": "true"
+                                        },
+                                        "src": "1134:16:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_bool",
+                                            "typeString": "bool"
+                                        }
+                                    },
+                                    "id": 122,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "1134:16:0"
+                                },
+                                {
+                                    "expression": {
+                                        "argumentTypes": null,
+                                        "id": 124,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "nodeType": "UnaryOperation",
+                                        "operator": "++",
+                                        "prefix": false,
+                                        "src": "1253:11:0",
+                                        "subExpression": {
+                                            "argumentTypes": null,
+                                            "id": 123,
+                                            "name": "shoesSold",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 20,
+                                            "src": "1253:9:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "id": 125,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "1253:11:0"
+                                }
+                            ]
+                        },
+                        "documentation": null,
+                        "functionSelector": "540a2f4f",
+                        "id": 127,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "buyShoe",
+                        "nodeType": "FunctionDefinition",
+                        "overrides": null,
+                        "parameters": {
+                            "id": 69,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 66,
+                                    "name": "_name",
+                                    "nodeType": "VariableDeclaration",
+                                    "overrides": null,
+                                    "scope": 127,
+                                    "src": "563:19:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "memory",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_string_memory_ptr",
+                                        "typeString": "string"
+                                    },
+                                    "typeName": {
+                                        "id": 65,
+                                        "name": "string",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "563:6:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_string_storage_ptr",
+                                            "typeString": "string"
+                                        }
+                                    },
+                                    "value": null,
+                                    "visibility": "internal"
+                                },
+                                {
+                                    "constant": false,
+                                    "id": 68,
+                                    "name": "_image",
+                                    "nodeType": "VariableDeclaration",
+                                    "overrides": null,
+                                    "scope": 127,
+                                    "src": "584:20:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "memory",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_string_memory_ptr",
+                                        "typeString": "string"
+                                    },
+                                    "typeName": {
+                                        "id": 67,
+                                        "name": "string",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "584:6:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_string_storage_ptr",
+                                            "typeString": "string"
+                                        }
+                                    },
+                                    "value": null,
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "562:43:0"
+                        },
+                        "returnParameters": {
+                            "id": 70,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "621:0:0"
+                        },
+                        "scope": 166,
+                        "src": "546:727:0",
+                        "stateMutability": "payable",
+                        "virtual": false,
+                        "visibility": "public"
+                    },
+                    {
+                        "body": {
+                            "id": 164,
+                            "nodeType": "Block",
+                            "src": "1389:238:0",
+                            "statements": [
+                                {
+                                    "assignments": [
+                                        139
+                                    ],
+                                    "declarations": [
+                                        {
+                                            "constant": false,
+                                            "id": 139,
+                                            "name": "purchase_states",
+                                            "nodeType": "VariableDeclaration",
+                                            "overrides": null,
+                                            "scope": 164,
+                                            "src": "1456:32:0",
+                                            "stateVariable": false,
+                                            "storageLocation": "memory",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_array$_t_bool_$100_memory_ptr",
+                                                "typeString": "bool[100]"
+                                            },
+                                            "typeName": {
+                                                "baseType": {
+                                                    "id": 137,
+                                                    "name": "bool",
+                                                    "nodeType": "ElementaryTypeName",
+                                                    "src": "1456:4:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_bool",
+                                                        "typeString": "bool"
+                                                    }
+                                                },
+                                                "id": 138,
+                                                "length": {
+                                                    "argumentTypes": null,
+                                                    "hexValue": "313030",
+                                                    "id": 136,
+                                                    "isConstant": false,
+                                                    "isLValue": false,
+                                                    "isPure": true,
+                                                    "kind": "number",
+                                                    "lValueRequested": false,
+                                                    "nodeType": "Literal",
+                                                    "src": "1461:3:0",
+                                                    "subdenomination": null,
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_rational_100_by_1",
+                                                        "typeString": "int_const 100"
+                                                    },
+                                                    "value": "100"
+                                                },
+                                                "nodeType": "ArrayTypeName",
+                                                "src": "1456:9:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_array$_t_bool_$100_storage_ptr",
+                                                    "typeString": "bool[100]"
+                                                }
+                                            },
+                                            "value": null,
+                                            "visibility": "internal"
+                                        }
+                                    ],
+                                    "id": 140,
+                                    "initialValue": null,
+                                    "nodeType": "VariableDeclarationStatement",
+                                    "src": "1456:32:0"
+                                },
+                                {
+                                    "body": {
+                                        "id": 160,
+                                        "nodeType": "Block",
+                                        "src": "1528:60:0",
+                                        "statements": [
+                                            {
+                                                "expression": {
+                                                    "argumentTypes": null,
+                                                    "id": 158,
+                                                    "isConstant": false,
+                                                    "isLValue": false,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "leftHandSide": {
+                                                        "argumentTypes": null,
+                                                        "baseExpression": {
+                                                            "argumentTypes": null,
+                                                            "id": 151,
+                                                            "name": "purchase_states",
+                                                            "nodeType": "Identifier",
+                                                            "overloadedDeclarations": [],
+                                                            "referencedDeclaration": 139,
+                                                            "src": "1542:15:0",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_array$_t_bool_$100_memory_ptr",
+                                                                "typeString": "bool[100] memory"
+                                                            }
+                                                        },
+                                                        "id": 153,
+                                                        "indexExpression": {
+                                                            "argumentTypes": null,
+                                                            "id": 152,
+                                                            "name": "i",
+                                                            "nodeType": "Identifier",
+                                                            "overloadedDeclarations": [],
+                                                            "referencedDeclaration": 142,
+                                                            "src": "1558:1:0",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_uint256",
+                                                                "typeString": "uint256"
+                                                            }
+                                                        },
+                                                        "isConstant": false,
+                                                        "isLValue": true,
+                                                        "isPure": false,
+                                                        "lValueRequested": true,
+                                                        "nodeType": "IndexAccess",
+                                                        "src": "1542:18:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_bool",
+                                                            "typeString": "bool"
+                                                        }
+                                                    },
+                                                    "nodeType": "Assignment",
+                                                    "operator": "=",
+                                                    "rightHandSide": {
+                                                        "argumentTypes": null,
+                                                        "expression": {
+                                                            "argumentTypes": null,
+                                                            "baseExpression": {
+                                                                "argumentTypes": null,
+                                                                "id": 154,
+                                                                "name": "shoes",
+                                                                "nodeType": "Identifier",
+                                                                "overloadedDeclarations": [],
+                                                                "referencedDeclaration": 23,
+                                                                "src": "1563:5:0",
+                                                                "typeDescriptions": {
+                                                                    "typeIdentifier": "t_array$_t_struct$_Shoe_$10_storage_$dyn_storage",
+                                                                    "typeString": "struct CoShoe.Shoe storage ref[] storage ref"
+                                                                }
+                                                            },
+                                                            "id": 156,
+                                                            "indexExpression": {
+                                                                "argumentTypes": null,
+                                                                "id": 155,
+                                                                "name": "i",
+                                                                "nodeType": "Identifier",
+                                                                "overloadedDeclarations": [],
+                                                                "referencedDeclaration": 142,
+                                                                "src": "1569:1:0",
+                                                                "typeDescriptions": {
+                                                                    "typeIdentifier": "t_uint256",
+                                                                    "typeString": "uint256"
+                                                                }
+                                                            },
+                                                            "isConstant": false,
+                                                            "isLValue": true,
+                                                            "isPure": false,
+                                                            "lValueRequested": false,
+                                                            "nodeType": "IndexAccess",
+                                                            "src": "1563:8:0",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_struct$_Shoe_$10_storage",
+                                                                "typeString": "struct CoShoe.Shoe storage ref"
+                                                            }
+                                                        },
+                                                        "id": 157,
+                                                        "isConstant": false,
+                                                        "isLValue": true,
+                                                        "isPure": false,
+                                                        "lValueRequested": false,
+                                                        "memberName": "sold",
+                                                        "nodeType": "MemberAccess",
+                                                        "referencedDeclaration": 9,
+                                                        "src": "1563:13:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_bool",
+                                                            "typeString": "bool"
+                                                        }
+                                                    },
+                                                    "src": "1542:34:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_bool",
+                                                        "typeString": "bool"
+                                                    }
+                                                },
+                                                "id": 159,
+                                                "nodeType": "ExpressionStatement",
+                                                "src": "1542:34:0"
+                                            }
+                                        ]
+                                    },
+                                    "condition": {
+                                        "argumentTypes": null,
+                                        "commonType": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        },
+                                        "id": 147,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftExpression": {
+                                            "argumentTypes": null,
+                                            "id": 145,
+                                            "name": "i",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 142,
+                                            "src": "1515:1:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "nodeType": "BinaryOperation",
+                                        "operator": "<",
+                                        "rightExpression": {
+                                            "argumentTypes": null,
+                                            "hexValue": "313030",
+                                            "id": 146,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": true,
+                                            "kind": "number",
+                                            "lValueRequested": false,
+                                            "nodeType": "Literal",
+                                            "src": "1518:3:0",
+                                            "subdenomination": null,
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_rational_100_by_1",
+                                                "typeString": "int_const 100"
+                                            },
+                                            "value": "100"
+                                        },
+                                        "src": "1515:6:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_bool",
+                                            "typeString": "bool"
+                                        }
+                                    },
+                                    "id": 161,
+                                    "initializationExpression": {
+                                        "assignments": [
+                                            142
+                                        ],
+                                        "declarations": [
+                                            {
+                                                "constant": false,
+                                                "id": 142,
+                                                "name": "i",
+                                                "nodeType": "VariableDeclaration",
+                                                "overrides": null,
+                                                "scope": 161,
+                                                "src": "1503:6:0",
+                                                "stateVariable": false,
+                                                "storageLocation": "default",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                },
+                                                "typeName": {
+                                                    "id": 141,
+                                                    "name": "uint",
+                                                    "nodeType": "ElementaryTypeName",
+                                                    "src": "1503:4:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "value": null,
+                                                "visibility": "internal"
+                                            }
+                                        ],
+                                        "id": 144,
+                                        "initialValue": {
+                                            "argumentTypes": null,
+                                            "hexValue": "30",
+                                            "id": 143,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": true,
+                                            "kind": "number",
+                                            "lValueRequested": false,
+                                            "nodeType": "Literal",
+                                            "src": "1512:1:0",
+                                            "subdenomination": null,
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_rational_0_by_1",
+                                                "typeString": "int_const 0"
+                                            },
+                                            "value": "0"
+                                        },
+                                        "nodeType": "VariableDeclarationStatement",
+                                        "src": "1503:10:0"
+                                    },
+                                    "loopExpression": {
+                                        "expression": {
+                                            "argumentTypes": null,
+                                            "id": 149,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "nodeType": "UnaryOperation",
+                                            "operator": "++",
+                                            "prefix": false,
+                                            "src": "1523:3:0",
+                                            "subExpression": {
+                                                "argumentTypes": null,
+                                                "id": 148,
+                                                "name": "i",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 142,
+                                                "src": "1523:1:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            },
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "id": 150,
+                                        "nodeType": "ExpressionStatement",
+                                        "src": "1523:3:0"
+                                    },
+                                    "nodeType": "ForStatement",
+                                    "src": "1498:90:0"
+                                },
+                                {
+                                    "expression": {
+                                        "argumentTypes": null,
+                                        "id": 162,
+                                        "name": "purchase_states",
+                                        "nodeType": "Identifier",
+                                        "overloadedDeclarations": [],
+                                        "referencedDeclaration": 139,
+                                        "src": "1605:15:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_array$_t_bool_$100_memory_ptr",
+                                            "typeString": "bool[100] memory"
+                                        }
+                                    },
+                                    "functionReturnParameters": 133,
+                                    "id": 163,
+                                    "nodeType": "Return",
+                                    "src": "1598:22:0"
+                                }
+                            ]
+                        },
+                        "documentation": null,
+                        "functionSelector": "558a2b8b",
+                        "id": 165,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "checkPurchases",
+                        "nodeType": "FunctionDefinition",
+                        "overrides": null,
+                        "parameters": {
+                            "id": 128,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "1346:2:0"
+                        },
+                        "returnParameters": {
+                            "id": 133,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 132,
+                                    "name": "",
+                                    "nodeType": "VariableDeclaration",
+                                    "overrides": null,
+                                    "scope": 165,
+                                    "src": "1370:16:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "memory",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_array$_t_bool_$100_memory_ptr",
+                                        "typeString": "bool[100]"
+                                    },
+                                    "typeName": {
+                                        "baseType": {
+                                            "id": 129,
+                                            "name": "bool",
+                                            "nodeType": "ElementaryTypeName",
+                                            "src": "1370:4:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_bool",
+                                                "typeString": "bool"
+                                            }
+                                        },
+                                        "id": 131,
+                                        "length": {
+                                            "argumentTypes": null,
+                                            "hexValue": "313030",
+                                            "id": 130,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": true,
+                                            "kind": "number",
+                                            "lValueRequested": false,
+                                            "nodeType": "Literal",
+                                            "src": "1375:3:0",
+                                            "subdenomination": null,
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_rational_100_by_1",
+                                                "typeString": "int_const 100"
+                                            },
+                                            "value": "100"
+                                        },
+                                        "nodeType": "ArrayTypeName",
+                                        "src": "1370:9:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_array$_t_bool_$100_storage_ptr",
+                                            "typeString": "bool[100]"
+                                        }
+                                    },
+                                    "value": null,
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "1369:19:0"
+                        },
+                        "scope": 166,
+                        "src": "1323:304:0",
+                        "stateMutability": "view",
+                        "virtual": false,
+                        "visibility": "public"
+                    }
+                ],
+                "scope": 167,
+                "src": "26:1605:0"
+            }
+        ],
+        "src": "0:1631:0"
+    },
+    "functionHashes": {
+        "buyShoe(string,string)": "540a2f4f",
+        "checkPurchases()": "558a2b8b",
+        "countShoes()": "2c01f3b0",
+        "shoes(uint256)": "607473cf"
+    },
+    "gasEstimates": {
+        "creation": {
+            "codeDepositCost": "359800",
+            "executionCost": "infinite",
+            "totalCost": "infinite"
+        },
+        "external": {
+            "buyShoe(string,string)": "infinite",
+            "checkPurchases()": "infinite",
+            "countShoes()": "977",
+            "shoes(uint256)": "infinite"
+        }
+    }
+}
