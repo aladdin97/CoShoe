@@ -14,7 +14,7 @@ contract CoShoe{
     uint price = 0.5*10**18 wei;
     uint shoesSold = 0;
     Shoe[] public shoes;
-    mapping(uint => Shoe) public shoeIdToShoe;
+    // mapping(uint => Shoe) public shoeIdToShoe;
 
     constructor() public {
         for (uint i = 0; i < 100; i++) {
